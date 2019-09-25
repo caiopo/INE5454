@@ -7,11 +7,13 @@ import scrapy
 
 
 class Product(scrapy.Item):
+    url = scrapy.Field()
     name = scrapy.Field()
     reviews = scrapy.Field()
+    retrieved_datetime = scrapy.Field()
 
 
 class Review(scrapy.Item):
-    rating = scrapy.Field
+    rating = scrapy.Field()
     comment = scrapy.Field()
-    datetime = scrapy.Field()
+    date = scrapy.Field()
