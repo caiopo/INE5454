@@ -5,8 +5,15 @@ from pathlib import Path
 from typing import List
 
 diseases = [
+    r'aids',
+    r'catapora',
+    r'conjuntivite',
+    r'dengue',
     r'febre amarela',
     r'gripe',
+    r'meningite',
+    r'sarampo',
+    r'sífilis',
     r'zika',
 ]
 
@@ -23,6 +30,7 @@ DOUBLE_WS = re.compile(r'\s\s+')
 
 def extract_title(response):
     strs: List[str] = response.xpath('//h1/text()').extract()
+    strs += response.xpath('//title/text()').extract()
 
     for s in strs:
         s = s.strip()
@@ -40,7 +48,7 @@ def extract_diseases(content):
     return [
         d
         for d in diseases
-        if d in content
+        if d in content.lower()
     ]
 
 
