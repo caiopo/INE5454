@@ -9,7 +9,7 @@ from news.items import NewsItem
 class NewsSpider(scrapy.Spider):
     name = 'newsbot'
 
-    allowed_domains = ["g1.globo.com", "noticias.uol.com.br", "www.terra.com.br"]
+    # allowed_domains = ["g1.globo.com", "noticias.uol.com.br", "www.terra.com.br"]
     start_urls = [
         'https://g1.globo.com/sp/santos-regiao/noticia/2019/10/11/'
         'macaco-morto-com-suspeita-de-febre-amarela-e-encontrado-em-eldorado-sp.ghtml',
@@ -45,7 +45,7 @@ class NewsSpider(scrapy.Spider):
                 content=content,
             )
 
-        yield from self.get_links(response)
+            yield from self.get_links(response)
 
     def get_links(self, response):
         for a in response.xpath('//a/@href'):

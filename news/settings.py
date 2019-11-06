@@ -10,7 +10,7 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 
-LOG_LEVEL = 'WARN'
+# LOG_LEVEL = 'WARN'
 
 BOT_NAME = 'newsbot'
 
