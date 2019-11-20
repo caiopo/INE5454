@@ -5,17 +5,20 @@ from pathlib import Path
 from typing import List
 
 diseases = [
-    r'aids',
-    r'catapora',
-    r'conjuntivite',
-    r'dengue',
-    r'febre amarela',
-    r'gripe',
-    r'meningite',
-    r'sarampo',
-    r'sífilis',
-    r'zika',
+    'catapora',
+    'catapora',
+    'conjuntivite',
+    'dengue',
+    'febre amarela',
+    'gripe',
+    'meningite',
+    'rubéola',
+    'sarampo',
+    'sífilis',
+    'zika',
 ]
+
+DOUBLE_WS = re.compile(r'\s\s+')
 
 with open(Path(__file__).parent / 'municipios.json') as f:
     cities = [
@@ -25,7 +28,6 @@ with open(Path(__file__).parent / 'municipios.json') as f:
         }
         for c in json.load(f)
     ]
-DOUBLE_WS = re.compile(r'\s\s+')
 
 
 def extract_title(response):

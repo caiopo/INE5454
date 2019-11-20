@@ -10,3 +10,4 @@ class NewsItem(scrapy.Item):
     diseases = scrapy.Field()
 
     retrieved_datetime = scrapy.Field()
+    depth = scrapy.Field()
